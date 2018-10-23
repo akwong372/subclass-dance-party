@@ -27,8 +27,17 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    // window.dancers.push(dancer);
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+
+  $('.lineUpBtn').on('click', function(event) {
+    // for (var i = 0; i < window.dancers.length; i++) {
+
+    // }
+    $('.dancer').addClass('lineUp');
+    $('.dancer').animate({'top': '200px', 'margin': '25px'});
+  });
+  // add new event handler with class of lineUpBtn have it line up all dancer classes
 });
 

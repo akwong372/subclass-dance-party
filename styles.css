@@ -25,6 +25,12 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.growingDancer {
+  /* position:absolute; */
+}
+.colorChangingDancer {
+  /* position: absolute; */
+}
 @keyframes loopingGrow {
   from {
     transform: scale(1.0)
@@ -41,4 +47,10 @@ body, a:link, a:visited, a:active{
   to {
     border:10px solid blue;
   }
+}
+
+.lineUp {
+  display: inline-block;
+  margin: 30px;
+  top: 50%;
 }
