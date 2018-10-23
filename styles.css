@@ -25,3 +25,20 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+@keyframes loopingGrow {
+  from {
+    transform: scale(1.0)
+  }
+  to {
+    transform: scale(2.0);
+  }
+}
+
+@keyframes loopingColor {
+  from {
+    border:10px solid red;
+  }
+  to {
+    border:10px solid blue;
+  }
+}
