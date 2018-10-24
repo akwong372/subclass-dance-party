@@ -54,5 +54,13 @@ $(document).ready(function() {
     $('div.colorChangingDancer').css('width', '+=120');
     $('div.colorChangingDancer').css('border-radius', '40%');
   });
+
+  $(document).bind('mousemove', function (e) {
+    $('#pacMan').css({
+      left: e.pageX - 50,
+      top: e.pageY - 50
+    });
+  });
+
 });
 

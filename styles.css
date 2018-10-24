@@ -9,10 +9,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 
-  margin: 0px;
-
   font-size: 18px;
 }
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -29,7 +28,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px solid white;
   border-radius:10px;
   position:absolute;
 }
@@ -45,10 +44,10 @@ body, a:link, a:visited, a:active{
 
 @keyframes loopingColor {
   from {
-    border:10px solid red;
+    border:10px solid white;
   }
   to {
-    border:10px solid blue;
+    border:10px solid yellow;
   }
 }
 
@@ -65,4 +64,10 @@ body, a:link, a:visited, a:active{
 
 .container{
   z-index: 100;
+}
+
+#pacMan{
+  transform: scale(0.4);
+  position: absolute;
+  float: left;
 }
