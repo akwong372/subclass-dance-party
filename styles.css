@@ -1,9 +1,13 @@
 body, html{
   height:100%;
 }
-body{
+body {
+  background: url("https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=46189421fffa759faf937fb71d65ce6e&auto=format&fit=crop&w=750&q=80");
+  /* background-size: 100% 100%; */
+  background-size: cover;
+
   margin: 0px;
-  background-color:#444;
+
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -16,6 +20,7 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  z-index: 99;
 }
 .title{
   background-color: #777;
@@ -25,12 +30,7 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-.growingDancer {
-  /* position:absolute; */
-}
-.colorChangingDancer {
-  /* position: absolute; */
-}
+
 @keyframes loopingGrow {
   from {
     transform: scale(1.0)
@@ -53,4 +53,9 @@ body, a:link, a:visited, a:active{
   display: inline-block;
   margin: 30px;
   top: 50%;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
 }
