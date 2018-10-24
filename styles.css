@@ -2,9 +2,12 @@ body, html{
   height:100%;
 }
 body {
-  background: url("https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=46189421fffa759faf937fb71d65ce6e&auto=format&fit=crop&w=750&q=80");
+  background: url('pacman background epic.png');
   /* background-size: 100% 100%; */
+  background-color: black;
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 
   margin: 0px;
 
