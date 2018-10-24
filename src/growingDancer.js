@@ -2,6 +2,7 @@ var MakeGrowingDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.scale(timeBetweenSteps);
   this.$node.addClass('growingDancer');
+  $(this.$node).attr('id', 'growingDancer');
 };
 
 MakeGrowingDancer.prototype = Object.create(MakeDancer.prototype);

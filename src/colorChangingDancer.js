@@ -2,6 +2,7 @@ var MakeColorChangingDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.color(timeBetweenSteps);
   this.$node.addClass('colorChangingDancer');
+  $(this.$node).attr('id', 'colorChangingDancer');
 };
 
 // we want to create a color changing dancer
