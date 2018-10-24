@@ -6,8 +6,11 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
+  // create a method that returns the coordinates for the dancer created
+  //this.coords = this.$node.getBoundingClientRect();
   this.step();
   this.setPosition(top, left);
+  
   // now that we have defined the this object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
 

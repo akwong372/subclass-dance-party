@@ -29,6 +29,8 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+    //  console.log(dancer.$node.position());
+     console.log('this is top: '+ dancer.top, 'this is left: ' + dancer.left)
   });
 
   $('.lineUpBtn').on('click', function(event) {
