@@ -28,7 +28,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     window.dancers.push(dancer);
-    $('body').append(dancer.$node);
+    $('.container').append(dancer.$node);
   });
 
   $('.lineUpBtn').on('click', function(event) {
@@ -45,6 +45,14 @@ $(document).ready(function() {
     growingDancerPos.left = blinkyDancer.left - 35;
     $('#growingDancer').animate(growingDancerPos);
     document.getElementById('dancer').remove();
+  });
+
+  $('.container').mouseover(function(event) {
+    console.log('this works')
+    $('div.colorChangingDancer').css('opacity', '0.5');
+    $('div.colorChangingDancer').css('height', '+=80');
+    $('div.colorChangingDancer').css('width', '+=120');
+    $('div.colorChangingDancer').css('border-radius', '40%');
   });
 });
 
