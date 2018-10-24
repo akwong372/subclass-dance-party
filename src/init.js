@@ -29,17 +29,31 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
-    //  console.log(dancer.$node.position());
-     console.log('this is top: '+ dancer.top, 'this is left: ' + dancer.left)
+    //console.log('this is top: '+ dancer.top, 'this is left: ' + dancer.left)
   });
 
   $('.lineUpBtn').on('click', function(event) {
     // for (var i = 0; i < window.dancers.length; i++) {
 
     // }
-    $('.dancer').addClass('lineUp');
+    // $('.dancer').addClass('lineUp');
     $('.dancer').animate({'top': '200px', 'margin': '25px'});
   });
+
+  $('.findPartnerBtn').on('click', function(event){
+    // try to get the growing dancers to move to the blinky dancers.
+    // have them relocate to the same top position
+
+    var blinkyDancer = $('#dancer').position();
+    var growingDancerPos = $('#growingDancer').position();
+    growingDancerPos.top = blinkyDancer.top;
+    console.log(blinkyDancer);
+    console.log(growingDancerPos);
+    growingDancerPos.left = blinkyDancer.left - 35;
+    $('#growingDancer').animate(growingDancerPos);
+    delete document.getElementById('dancer');
+  });
+
   // add new event handler with class of lineUpBtn have it line up all dancer classes
 });
 

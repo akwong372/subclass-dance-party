@@ -49,13 +49,9 @@ body, a:link, a:visited, a:active{
   }
 }
 
-.lineUp {
+/* .lineUp {
   display: inline-block;
   margin: 30px;
   top: 50%;
-}
+} */
 
-.background {
-  height: 100%;
-  width: 100%;
-}
