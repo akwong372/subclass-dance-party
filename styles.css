@@ -2,14 +2,16 @@ body, html{
   height:100%;
 }
 body {
-  background: url("https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=46189421fffa759faf937fb71d65ce6e&auto=format&fit=crop&w=750&q=80");
+  background: url('pacman background epic.png');
   /* background-size: 100% 100%; */
+  background-color: black;
+  background-position: center;
   background-size: cover;
-
-  margin: 0px;
+  background-repeat: no-repeat;
 
   font-size: 18px;
 }
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -26,7 +28,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px solid white;
   border-radius:10px;
   position:absolute;
 }
@@ -42,10 +44,10 @@ body, a:link, a:visited, a:active{
 
 @keyframes loopingColor {
   from {
-    border:10px solid red;
+    border:10px solid white;
   }
   to {
-    border:10px solid blue;
+    border:10px solid yellow;
   }
 }
 
@@ -55,3 +57,17 @@ body, a:link, a:visited, a:active{
   top: 50%;
 } */
 
+.background {
+  height: 100%;
+  width: 100%;
+}
+
+.container{
+  z-index: 100;
+}
+
+#pacMan{
+  transform: scale(0.4);
+  position: absolute;
+  float: left;
+}

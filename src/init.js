@@ -28,14 +28,10 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     window.dancers.push(dancer);
-    $('body').append(dancer.$node);
-    //console.log('this is top: '+ dancer.top, 'this is left: ' + dancer.left)
+    $('.container').append(dancer.$node);
   });
 
   $('.lineUpBtn').on('click', function(event) {
-    // for (var i = 0; i < window.dancers.length; i++) {
-
-    // }
     // $('.dancer').addClass('lineUp');
     $('.dancer').animate({'top': '200px', 'margin': '25px'});
   });
@@ -43,17 +39,28 @@ $(document).ready(function() {
   $('.findPartnerBtn').on('click', function(event){
     // try to get the growing dancers to move to the blinky dancers.
     // have them relocate to the same top position
-
     var blinkyDancer = $('#dancer').position();
     var growingDancerPos = $('#growingDancer').position();
     growingDancerPos.top = blinkyDancer.top;
-    console.log(blinkyDancer);
-    console.log(growingDancerPos);
     growingDancerPos.left = blinkyDancer.left - 35;
     $('#growingDancer').animate(growingDancerPos);
-    delete document.getElementById('dancer');
+    document.getElementById('dancer').remove();
   });
 
-  // add new event handler with class of lineUpBtn have it line up all dancer classes
+  $('.container').mouseover(function(event) {
+    console.log('this works')
+    $('div.colorChangingDancer').css('opacity', '0.5');
+    $('div.colorChangingDancer').css('height', '+=80');
+    $('div.colorChangingDancer').css('width', '+=120');
+    $('div.colorChangingDancer').css('border-radius', '40%');
+  });
+
+  $(document).bind('mousemove', function (e) {
+    $('#pacMan').css({
+      left: e.pageX - 50,
+      top: e.pageY - 50
+    });
+  });
+
 });
 
