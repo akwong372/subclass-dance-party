@@ -1,5 +1,10 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.growers = [];
+  window.colorChanger = [];
+  window.ghosts = [];
+  var score = 0;
+  $('.score').html('Score: ' + score);
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -28,8 +33,18 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     window.dancers.push(dancer);
+
+    if (dancer instanceof MakeGrowingDancer) {
+      window.growers.push(dancer);
+    }
+    if (dancer instanceof MakeColorChangingDancer) {
+      window.colorChanger.push(dancer);
+    }
+
     $('.container').append(dancer.$node);
   });
+//end of addDancer
+
 
   $('.lineUpBtn').on('click', function(event) {
     // $('.dancer').addClass('lineUp');
@@ -39,26 +54,40 @@ $(document).ready(function() {
   $('.findPartnerBtn').on('click', function(event){
     // try to get the growing dancers to move to the blinky dancers.
     // have them relocate to the same top position
-    var blinkyDancer = $('#dancer').position();
-    var growingDancerPos = $('#growingDancer').position();
-    growingDancerPos.top = blinkyDancer.top;
-    growingDancerPos.left = blinkyDancer.left - 35;
-    $('#growingDancer').animate(growingDancerPos);
-    document.getElementById('dancer').remove();
+    var sorted = [window.growers.length, window.colorChanger.length].sort(function (a, b){
+      return a - b;
+    });
+    var longest = sorted[1];
+    for (var i = 0; i < longest; i++) {
+      var pair1Pos = $(window.growers[i].$node).position();
+      var pair2Pos = $(window.colorChanger[i].$node).position();
+      pair1Pos.top = pair2Pos.top;
+      pair1Pos.left = pair2Pos.left - 35;
+      $(window.growers[i].$node).animate(pair1Pos);
+    }
+    // var blinkyDancer = $('#dancer').position();
+    // var growingDancerPos = $('#growingDancer').position();
+    // growingDancerPos.top = blinkyDancer.top;
+    // growingDancerPos.left = blinkyDancer.left - 35;
+    // $('#growingDancer').animate(growingDancerPos);
+    // document.getElementById('dancer').remove();
   });
 
   $('.container').mouseover(function(event) {
-    console.log('this works')
-    $('div.colorChangingDancer').css('opacity', '0.5');
-    $('div.colorChangingDancer').css('height', '+=80');
-    $('div.colorChangingDancer').css('width', '+=120');
-    $('div.colorChangingDancer').css('border-radius', '40%');
+    console.log(event.target.id);
+    if (event.target.id === "growingDancer") {
+      console.log('works');
+      $('.blinky').attr('src', "vGhost.gif");
+    }
+    $(event.target).remove();
+    score++;
+    $('.score').html('Score: ' + score);
   });
 
   $(document).bind('mousemove', function (e) {
     $('#pacMan').css({
-      left: e.pageX - 50,
-      top: e.pageY - 50
+      left: e.pageX - 141,
+      top: e.pageY - 100
     });
   });
 
