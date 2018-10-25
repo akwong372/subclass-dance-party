@@ -41,17 +41,17 @@ $(document).ready(function() {
       window.colorChanger.push(dancer);
     }
 
-    $('.container').append(dancer.$node);
+    $('.bodyContainer').append(dancer.$node);
   });
 //end of addDancer
 
 
-  $('.lineUpBtn').on('click', function(event) {
+  $('.lineUp').on('click', function(event) {
     // $('.dancer').addClass('lineUp');
     $('.dancer').animate({'top': '200px', 'margin': '25px'});
   });
 
-  $('.findPartnerBtn').on('click', function(event){
+  $('.pairUp').on('click', function(event){
     // try to get the growing dancers to move to the blinky dancers.
     // have them relocate to the same top position
     var sorted = [window.growers.length, window.colorChanger.length].sort(function (a, b){
@@ -73,7 +73,7 @@ $(document).ready(function() {
     // document.getElementById('dancer').remove();
   });
 
-  $('.container').mouseover(function(event) {
+  $('.bodyContainer').mouseover(function(event) {
     console.log(event.target.id);
     if (event.target.id === "growingDancer") {
       console.log('works');
@@ -90,6 +90,9 @@ $(document).ready(function() {
       top: e.pageY - 100
     });
   });
+
+  // side bar jquery animation
+  $('.sidenav').sidenav();
 
 });
 
