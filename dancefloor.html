@@ -19,7 +19,8 @@
       <nav class='nav-wrapper blue lighten-1'>
         <!-- div container here -->
         <div class='container'></div>
-        <a href="#" id="title"class="brand-logo center">PACMAN!</a>
+        <a href="#" id="title"class="brand-logo top"><img class="pacmanLogo" src="Pac_man_fever_logo_by_ringostarr39-d7um0vi.png">
+        </a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons right">menu</i>
         </a>
@@ -28,8 +29,10 @@
             <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeColorChangingDancer">color changing pellet!</a></li>
             <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeGrowingDancer">powerup pellet!</a></li>
             <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">flashing pellet!</a></li>
-            <li><a href="#" class="lineUp" >line Up!</a></li>
-            <li><a href="#" class="pairUp" >find Partner!</a></li>
+        </ul>
+        <ul class= 'left hide-on-med-and-down'>
+          <li><a href="#" class="lineUp" >line Up!</a></li>
+          <li><a href="#" class="pairUp" >find Partner!</a></li>
         </ul>
       </nav>
 
@@ -38,10 +41,13 @@
             <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeColorChangingDancer">color changing pellet!</a></li>
             <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeGrowingDancer">powerup pellet!</a></li>
             <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">flashing pellet!</a></li>
+            <li><a href="#" class="lineUp" >line Up!</a></li>
+            <li><a href="#" class="pairUp" >find Partner!</a></li>
         </ul>
     </header>
-
-
+    <!-- audio play -->
+    <iframe src="Soundfiles/pacman_beginning.wav" allow="autoplay" style="display:none" id="chromeAudio"></iframe>
+    <audio autoplay src="Soundfiles/pacman_beginning.wav" id="notChromeAudio"></audio>
     <div class="bodyContainer"></div>
     <div id="pacMan">
       <img  src="https://vignette.wikia.nocookie.net/panama-test/images/5/5f/Pacman.gif/revision/latest?cb=20160405015526" alt=""/>

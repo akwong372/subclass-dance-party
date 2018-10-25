@@ -3,34 +3,38 @@ $(document).ready(function() {
   window.growers = [];
   window.colorChanger = [];
   window.ghosts = [];
+  var ghostSound = new Audio('Soundfiles/pacman_eatghost.wav');
   var score = 0;
   $('.score').html('Score: ' + score);
+  // side bar jquery animation
+  $('.sidenav').sidenav();
+
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
-     * buttons on dancefloor.html. You should only need to make one small change to it.
-     * As long as the "data-dancer-maker-function-name" attribute of a
-     * class="addDancerButton" DOM node matches one of the names of the
-     * maker functions available in the global scope, clicking that node
-     * will call the function to make the dancer.
-     */
+    * buttons on dancefloor.html. You should only need to make one small change to it.
+    * As long as the "data-dancer-maker-function-name" attribute of a
+    * class="addDancerButton" DOM node matches one of the names of the
+    * maker functions available in the global scope, clicking that node
+    * will call the function to make the dancer.
+    */
 
-    /* dancerMakerFunctionName is a string which must match
-     * one of the dancer maker functions available in global scope.
-     * A new object of the given type will be created and added
-     * to the stage.
-     */
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+   /* dancerMakerFunctionName is a string which must match
+   * one of the dancer maker functions available in global scope.
+   * A new object of the given type will be created and added
+   * to the stage.
+   */
+  var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
-    // get the maker function for the kind of dancer we're supposed to make
-    var dancerMakerFunction = window[dancerMakerFunctionName];
+  // get the maker function for the kind of dancer we're supposed to make
+  var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    // make a dancer with a random position
+  // make a dancer with a random position
 
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
+  var dancer = new dancerMakerFunction(
+    $("body").height() * Math.random(),
+    $("body").width() * Math.random(),
+    Math.random() * 1000
     );
     window.dancers.push(dancer);
 
@@ -43,12 +47,12 @@ $(document).ready(function() {
 
     $('.bodyContainer').append(dancer.$node);
   });
-//end of addDancer
+  //end of addDancer
 
 
   $('.lineUp').on('click', function(event) {
     // $('.dancer').addClass('lineUp');
-    $('.dancer').animate({'top': '200px', 'margin': '25px'});
+    $('.dancer').animate({'top': '243px', 'margin': '25px'});
   });
 
   $('.pairUp').on('click', function(event){
@@ -75,13 +79,21 @@ $(document).ready(function() {
 
   $('.bodyContainer').mouseover(function(event) {
     console.log(event.target.id);
+
     if (event.target.id === "growingDancer") {
       console.log('works');
       $('.blinky').attr('src', "vGhost.gif");
     }
-    $(event.target).remove();
-    score++;
-    $('.score').html('Score: ' + score);
+
+    if (event.target.outerHTML !== '<img class="blinky" src="redGhost.gif">') {
+      if (event.target.outerHTML === '<img class="blinky" src="vGhost.gif">') {
+        ghostSound.play();
+      }
+      $(event.target).remove();
+      score++;
+      $('.score').html('Score: ' + score);
+    }
+
   });
 
   $(document).bind('mousemove', function (e) {
@@ -91,8 +103,15 @@ $(document).ready(function() {
     });
   });
 
-  // side bar jquery animation
-  $('.sidenav').sidenav();
+//audio playback in google chrome
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome) {
+    $('#chromeAudio').remove();
+  } else {
+    $('#notChromeAudio').remove();
+  }
+
+
 
 });
 

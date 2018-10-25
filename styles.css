@@ -2,7 +2,12 @@ body, html{
   height:100%;
 }
 body {
-  background: url('pacman background epic.png');
+  /* box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  background: url('pacman background epic.png') center no-repeat;
   /* background-size: 100% 100%; */
   background-color: black;
   background-position: center;
@@ -63,3 +68,11 @@ body, a:link, a:visited, a:active{
   margin: 10px;
   padding: 5px;
 }
+
+#title {
+  top: -160px;
+  left: 230px;
+  transform: scale(0.2);
+
+}
+
