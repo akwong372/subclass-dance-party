@@ -8,22 +8,23 @@
     <script src="src/blinkyDancer.js"></script>
     <script src="src/growingDancer.js"></script>
     <script src="src/colorChangingDancer.js"></script>
+    <script src="src/ghosts.js"></script>
   </head>
   <body>
     <div class="topbar">
       <button class="lineUpBtn">Line Up!</button>
       <button class= "findPartnerBtn">Find Partner!</button>
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">add a blinky dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeGrowingDancer">add a growing dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeColorChangingDancer">add a color changing dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">add a flashing pellet!</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeGrowingDancer">add a growing pellet!</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeColorChangingDancer">add a color changing pellet!</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="Ghosts">add blinky!</a>
     </div>
-
-    <div class="container">
-      <div id="pacMan">
-        <img  src="https://vignette.wikia.nocookie.net/panama-test/images/5/5f/Pacman.gif/revision/latest?cb=20160405015526" alt=""/>
-      </div>
+    <div class="container"></div>
+    <div id="pacMan">
+      <img  src="https://vignette.wikia.nocookie.net/panama-test/images/5/5f/Pacman.gif/revision/latest?cb=20160405015526" alt=""/>
     </div>
+    <div id="scoreBoard" class="score"></div>
     <div class='background'></div>
     <script src="src/init.js"></script>
   </body>
