@@ -67,6 +67,7 @@ body, a:link, a:visited, a:active{
 }
 
 #pacMan{
+  cursor: url("https://vignette.wikia.nocookie.net/panama-test/images/5/5f/Pacman.gif/revision/latest?cb=20160405015526"), default;
   transform: scale(0.4);
   position: absolute;
   float: left;
