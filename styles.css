@@ -76,3 +76,16 @@ body, a:link, a:visited, a:active{
 
 }
 
+.ghosts{
+  animation: ghostMove 1s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes ghostMove {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50px, 0);
+  }
+}
