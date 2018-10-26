@@ -16,6 +16,4 @@ describe('Ghosts', function() {
   it('should have a sound for eating a ghost', function() {
     expect(ghostSound).to.not.equal(undefined);
   });
-
-  //try to check and see if the color is actually changing from red to blue.
 });

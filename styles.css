@@ -2,13 +2,7 @@ body, html{
   height:100%;
 }
 body {
-  /* box-sizing: border-box;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
   background: url('pacman background epic.png') center no-repeat;
-  /* background-size: 100% 100%; */
   background-color: black;
   background-position: center;
   background-size: cover;
@@ -71,7 +65,6 @@ body, a:link, a:visited, a:active{
   top: -160px;
   left: 230px;
   transform: scale(0.2);
-
 }
 
 .ghosts{
@@ -92,15 +85,12 @@ body, a:link, a:visited, a:active{
 /* mspacman gif size */
 .mspacman {
   transform: scale(0.7);
-
-
 }
 
 .msPacman {
   position: absolute;
-
-    -webkit-animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-            animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  -webkit-animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
   }
 
   @-webkit-keyframes roll-in-blurred-left {
