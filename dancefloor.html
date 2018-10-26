@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Object Dance Party</title>
+    <title>PacMan Fever</title>
     <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
@@ -11,6 +11,7 @@
     <script src="src/growingDancer.js"></script>
     <script src="src/colorChangingDancer.js"></script>
     <script src="src/ghosts.js"></script>
+    <script src="src/msPacman.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'></script>
   </head>
@@ -25,14 +26,16 @@
           <i class="material-icons right">menu</i>
         </a>
         <ul class= "right hide-on-med-and-down">
-            <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="Ghosts">Blinky!</a></li>
-            <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeColorChangingDancer">color changing pellet!</a></li>
-            <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeGrowingDancer">powerup pellet!</a></li>
-            <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">flashing pellet!</a></li>
+            <li><a href="#" class="addDancerButton amber-text text-darken-3" data-dancer-maker-function-name="Ghosts">Blinky!</a></li>
+            <li><a href="#" class="addDancerButton amber-text text-darken-3" data-dancer-maker-function-name="MakeColorChangingDancer">color changing pellet!</a></li>
+            <li><a href="#" class="addDancerButton amber-text text-darken-3" data-dancer-maker-function-name="MakeGrowingDancer">powerup pellet!</a></li>
+            <li><a href="#" class="addDancerButton amber-text text-darken-3" data-dancer-maker-function-name="MakeBlinkyDancer">flashing pellet!</a></li>
         </ul>
         <ul class= 'left hide-on-med-and-down'>
-          <li><a href="#" class="lineUp" >line Up!</a></li>
-          <li><a href="#" class="pairUp" >find Partner!</a></li>
+          <li><a href="#" class="lineUp amber-text text-darken-3" >line Up!</a></li>
+          <li><a href="#" class="pairUp amber-text text-darken-3" >find Partner!</a></li>
+          <li><a href="#" class="addDancerButton amber-text text-darken-3"
+            data-dancer-maker-function-name="MsPacman">Try me!</a></li>
         </ul>
       </nav>
 
@@ -43,6 +46,8 @@
             <li><a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">flashing pellet!</a></li>
             <li><a href="#" class="lineUp" >line Up!</a></li>
             <li><a href="#" class="pairUp" >find Partner!</a></li>
+            <li><a href="#" class="addDancerButton"
+            data-dancer-maker-function-name="MsPacman" >Try me!</a></li>
         </ul>
     </header>
     <!-- audio play -->

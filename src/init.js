@@ -78,13 +78,17 @@ $(document).ready(function() {
   });
 
   $('.bodyContainer').mouseover(function(event) {
-    console.log(event.target.id);
 
+    //console.log($(this).attr('src'));
+
+    console.log(event.target.outerHTML);
     if (event.target.id === "growingDancer") {
-      console.log('works');
       $('.blinky').attr('src', "vGhost.gif");
     }
 
+    //event.target.outerHTML !== '<img class="blinky" src="redGhost.gif">'
+    // $(this).hasClass('blinky')
+    // $(this).attr('src') === "redGhost.gif"
     if (event.target.outerHTML !== '<img class="blinky" src="redGhost.gif">') {
       if (event.target.outerHTML === '<img class="blinky" src="vGhost.gif">') {
         ghostSound.play();
@@ -93,7 +97,6 @@ $(document).ready(function() {
       score++;
       $('.score').html('Score: ' + score);
     }
-
   });
 
   $(document).bind('mousemove', function (e) {
@@ -110,8 +113,6 @@ $(document).ready(function() {
   } else {
     $('#notChromeAudio').remove();
   }
-
-
 
 });
 
